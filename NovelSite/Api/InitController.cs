@@ -20,12 +20,12 @@ namespace NovelSite.Api
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            if (!db.Ado.IsValidConnection())
-            {
+ 
+                Console.WriteLine("创建数据库");
                 db.DbMaintenance.CreateDatabase();
                 //db.CodeFirst.InitTables(typeof(User));
                 db.CodeFirst.SetStringDefaultLength(200).InitTables(typeof(User));
-            }
+    
             return new string[] { "value1", "value2" };
         }
     }

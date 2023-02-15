@@ -9,7 +9,7 @@ namespace NovelSite.Expand
             var dbpath = $"{AppDomain.CurrentDomain.BaseDirectory}{dbName}.db";
             if (!File.Exists(dbpath))
             {
-                Console.WriteLine(dbpath + " 文件不存在,创建数据库!");
+                Console.WriteLine(dbpath + " 文件不存在");
             }
 
             SqlSugarScope sqlSugar = new SqlSugarScope(new ConnectionConfig()
